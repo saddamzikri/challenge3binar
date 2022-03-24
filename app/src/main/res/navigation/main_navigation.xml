@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragmentPertama">
+
+    <fragment
+        android:id="@+id/fragmentPertama"
+        android:name="com.saddam.challenge3binar.FragmentPertama"
+        android:label="FragmentPertama" >
+        <action
+            android:id="@+id/action_fragmentPertama_to_fragmentKedua"
+            app:destination="@id/fragmentKedua" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentKedua"
+        android:name="com.saddam.challenge3binar.FragmentKedua"
+        android:label="FragmentKedua" >
+        <action
+            android:id="@+id/action_fragmentKedua_to_fragmentKetiga"
+            app:destination="@id/fragmentKetiga" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentKetiga"
+        android:name="com.saddam.challenge3binar.FragmentKetiga"
+        android:label="FragmentKetiga" >
+        <action
+            android:id="@+id/action_fragmentKetiga_to_fragmentKeempat"
+            app:destination="@id/fragmentKeempat" />
+        <argument
+            android:name="atribute"
+            app:argType="com.saddam.challenge3binar.Atribute"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentKeempat"
+        android:name="com.saddam.challenge3binar.FragmentKeempat"
+        android:label="FragmentKeempat" >
+        <action
+            android:id="@+id/action_fragmentKeempat_to_fragmentKetiga"
+            app:destination="@id/fragmentKetiga" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
