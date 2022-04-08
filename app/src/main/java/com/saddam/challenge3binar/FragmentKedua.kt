@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.saddam.challenge3binar.R
-import com.saddam.challenge3binar.Atribute
 import com.saddam.challenge3binar.databinding.FragmentKeduaBinding
 
 
@@ -29,18 +26,18 @@ class FragmentKedua : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        binding.button.setOnClickListener {
-            if (binding.edtName.text.isNullOrEmpty()) {
+        binding.btnScreen2.setOnClickListener {
+            if (binding.edtName.text.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Kolom Nama Masih Kosong !", Toast.LENGTH_SHORT).show()
             }
-            else{
-            val name = binding.edtName.text.toString()
-            val atribute = Atribute(name)
-            val action = FragmentKeduaDirections.actionFragmentKeduaToFragmentKetiga(atribute)
-            findNavController().navigate(action)
+            else {
+                val name = _binding?.edtName?.text!!
+                val atribute = Atribute(name)
+                val action = FragmentKeduaDirections.actionFragmentKeduaToFragmentKetiga(atribute)
+                it.findNavController().navigate(action)
             }
         }
+
     }
 
     override fun onDestroyView() {

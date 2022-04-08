@@ -18,7 +18,7 @@
         tools:text="Muhammad Saddam Zikri Dalimunthe" />
 
     <TextView
-        android:id="@+id/tv_age"
+        android:id="@+id/tv_gaji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,25 +29,37 @@
         tools:text="Usia Anda : " />
 
     <TextView
-        android:id="@+id/tv_alamat"
+        android:id="@+id/tv_iuran_bulanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_age"
+        app:layout_constraintTop_toBottomOf="@id/tv_gaji"
         tools:text="Alamat Anda : " />
 
     <TextView
-        android:id="@+id/tv_pekerjaan"
+        android:id="@+id/tv_belanja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_alamat"
+        app:layout_constraintTop_toBottomOf="@id/tv_iuran_bulanan"
         tools:text="Pekerjaan Anda : " />
+
+    <TextView
+        android:id="@+id/tv_pengeluaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_belanja"
+        tools:text="Pengeluaran anda adalah sebesar : "
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

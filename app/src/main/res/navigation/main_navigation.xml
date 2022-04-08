@@ -19,6 +19,10 @@
         <action
             android:id="@+id/action_fragmentKedua_to_fragmentKetiga"
             app:destination="@id/fragmentKetiga" />
+        <argument
+            android:name="atribute"
+            app:argType="com.saddam.challenge3binar.Atribute"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentKetiga"
@@ -31,6 +35,11 @@
             android:name="atribute"
             app:argType="com.saddam.challenge3binar.Atribute"
             app:nullable="true" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="saddam" />
     </fragment>
     <fragment
         android:id="@+id/fragmentKeempat"
@@ -39,8 +48,5 @@
         <action
             android:id="@+id/action_fragmentKeempat_to_fragmentKetiga"
             app:destination="@id/fragmentKetiga" />
-        <argument
-            android:name="name"
-            app:argType="string" />
     </fragment>
 </navigation>

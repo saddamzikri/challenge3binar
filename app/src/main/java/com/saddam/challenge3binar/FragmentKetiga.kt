@@ -1,5 +1,6 @@
 package com.saddam.challenge3binar
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,29 +31,25 @@ class FragmentKetiga : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val name = args.atribute?.name
-        val usia = args.atribute?.umur
-        val alamat = args.atribute?.alamat
-        val pekerjaan = args.atribute?.pekerjaan
+        val gaji = args.atribute?.gaji.toString().toInt()
+        val iuranBulanan = args.atribute?.iuranBulanan.toString().toInt()
+        val belanja = args.atribute?.belanja.toString().toInt()
+        // val pengeluaran = gaji + iuranBulanan - belanja
 
         binding.btnScreen3.setOnClickListener {
             findNavController().navigate(FragmentKetigaDirections.actionFragmentKetigaToFragmentKeempat(name!!))
         }
 
-        if (alamat == null && pekerjaan == null && usia == null){
+        if (gaji == null && iuranBulanan == null && belanja == null){
             binding.txtYourname.text = name
         } else {
             with(binding){
                 txtYourname.visibility = View.INVISIBLE
                 binding.viewFullIdentity.atributeDetail.visibility = View.VISIBLE
-                binding.viewFullIdentity.tvFullname.text = name
-                binding.viewFullIdentity.tvAlamat.text = alamat
-                binding.viewFullIdentity.tvPekerjaan.text = pekerjaan
-
-                if (args.atribute!!.umur?.rem(2) == 0){
-                    viewFullIdentity.tvAge.text = getString(R.string.umur, usia, "genap")
-                } else {
-                    viewFullIdentity.tvAge.text = getString(R.string.umur, usia, "ganjil")
-                }
+                binding.viewFullIdentity.tvGaji.text = gaji.toString()
+                binding.viewFullIdentity.tvIuranBulanan.text = iuranBulanan.toString()
+                binding.viewFullIdentity.tvBelanja.text = belanja.toString()
+                // binding.viewFullIdentity.tvPengeluaran.text = pengeluaran.toString()
 
             }
         }

@@ -2,5 +2,4 @@
     <string name="app_name">challenge3binar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="umur">%1$d Bernilai %2$s</string>
 </resources>

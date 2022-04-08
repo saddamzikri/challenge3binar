@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.saddam.challenge3binar.R
-import com.saddam.challenge3binar.Atribute
 import com.saddam.challenge3binar.databinding.FragmentKeempatBinding
 
 class FragmentKeempat : Fragment() {
@@ -33,17 +31,17 @@ class FragmentKeempat : Fragment() {
 
         binding.apply {
             edtName.setText(args.name)
-            button.setOnClickListener {
+            btnScreen4.setOnClickListener {
                 val nama = edtName.text.toString()
-                val umur = edtUsia.text.toString().toInt()
-                val alamat = edtAlamat.text.toString()
-                val pekerjaan = edtPekerjaan.text.toString()
+                val gaji = edtGaji.text.toString().toInt()
+                val iuranBulanan = edtIuranBulanan.text.toString().toInt()
+                val belanja = edtBelanja.text.toString().toInt()
 
-                if (edtName.text.isNullOrEmpty() || edtUsia.text.isNullOrEmpty() || edtAlamat.text.isNullOrEmpty() || edtPekerjaan.text.isNullOrEmpty()) {
+                if (edtName.text.isNullOrEmpty() || edtGaji.text.isNullOrEmpty() || edtIuranBulanan.text.isNullOrEmpty() || edtBelanja.text.isNullOrEmpty()) {
                     Toast.makeText(requireContext(), "Lengkapi Data Anda !", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val atribute = Atribute(nama, umur, alamat, pekerjaan)
+                    val atribute = Atribute(nama, gaji, iuranBulanan, belanja)
                     findNavController().navigate(
                         FragmentKeempatDirections.actionFragmentKeempatToFragmentKetiga(
                             atribute
